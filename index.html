@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Neo - Jogo da Cobrinha</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="arcade-container">
+    <header class="arcade-header">
+      <h1>SNAKE <span>NEO</span></h1>
+      <p class="subtitle">Edição Arcade</p>
+    </header>
+
+    <div class="scoreboard">
+      <div class="score-box">
+        <span class="label">PONTOS</span>
+        <span id="score" class="value">0000</span>
+      </div>
+      <div class="score-box highlight">
+        <span class="label">RECORDE</span>
+        <span id="high-score" class="value">0000</span>
+      </div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+      <div id="start-screen" class="overlay">
+        <h2>SNAKE NEO</h2>
+        <p>Use as setas do teclado para jogar</p>
+        <button id="start-btn" class="arcade-btn">INICIAR JOGO</button>
+      </div>
+
+      <div id="game-over-screen" class="overlay hidden">
+        <h2>GAME OVER</h2>
+        <p>Pontuação Final: <span id="final-score">0</span></p>
+        <button id="restart-btn" class="arcade-btn">JOGAR NOVAMENTE</button>
+      </div>
+    </div>
+
+    <div class="controls-hint">
+      <div class="key-group">
+        <span class="key">▲</span>
+        <div class="key-row">
+          <span class="key">◄</span>
+          <span class="key">▼</span>
+          <span class="key">►</span>
+        </div>
+      </div>
+      <p>Controles de Navegação</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<div class="difficulty-select">
+  <button onclick="setSpeed(140)">Fácil</button>
+  <button onclick="setSpeed(90)">Médio</button>
+  <button onclick="setSpeed(50)">Rápido</button>
+</div>
+
+<div class="mobile-controls">
+  <button onclick="changeDir('up')">▲</button>
+  <div class="row">
+    <button onclick="changeDir('left')">◄</button>
+    <button onclick="changeDir('down')">▼</button>
+    <button onclick="changeDir('right')">►</button>
+  </div>
+</div>
